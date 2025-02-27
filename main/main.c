@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "dht.hpp"
+#include "dht.h"
 
 int var = 0;
 static SemaphoreHandle_t mutex;

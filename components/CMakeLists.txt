@@ -2,7 +2,8 @@
 
 idf_component_register(
     SRCS 
-        "dht/dht.c"  
+        "dht_sensor/dht_sensor.c"  
     INCLUDE_DIRS 
-        "dht"
+        "dht_sensor"
+    REQUIRES dht
 )

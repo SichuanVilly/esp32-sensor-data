@@ -1,4 +1,4 @@
-#include "dht.h"
+#include "dht_sensor.h"
 #include <stdio.h>
 
 void read_temperature(void)

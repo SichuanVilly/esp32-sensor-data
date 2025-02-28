@@ -2,6 +2,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "dht_sensor.h"
+#include "lcd_i2c.h"
 
 int var = 0;
 static SemaphoreHandle_t mutex;
@@ -27,5 +28,6 @@ void app_main(void)
     }
     printf("mutex created succesfully\n");
     printf("setup done...\n");
+    display_on_screen();
     xTaskCreatePinnedToCore(&task_read_temperature_and_humidity_dht22, "PRINT_TASK", 4096, NULL, 1, NULL, 0);
 }

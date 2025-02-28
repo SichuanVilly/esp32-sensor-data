@@ -2,9 +2,9 @@
 # define DHT_SENSOR_H
 # include "dht.h"
 
-# define DHTPIN 4
-# define DHTTYPE DHT22
+#define DHT_PIN GPIO_NUM_4
+#define DHT_TYPE DHT_TYPE_AM2301
 
-void read_temperature(void);
+void dht_sensor_read(void);
 
 #endif  // DHT_SENSOR_H

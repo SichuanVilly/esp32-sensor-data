@@ -1,17 +1,17 @@
 #include "dht_sensor.h"
-#include <stdio.h>
+#include "common.h"
 
-//static DHT dht(DHTPIN, DHTTYPE);
+#define LOG_TAG "DHT_SENSOR"
 
 void dht_sensor_read(void)
 {
     float temp = 0.f;
     float humid = 0.f;
-    printf("reading_temperature...\n");
+    ESP_LOGI(LOG_TAG, "reading_temperature...");
 
     if (dht_read_float_data(DHT_TYPE, DHT_PIN, &humid, &temp) != ESP_OK)
     {
-        perror("Error reading humidity and temperature");
+        ESP_LOGE(LOG_TAG, "Error reading humidity and temperature");
         return ;
     }
     printf("temp: %f C\nhumid: %f %%\n", temp, humid);

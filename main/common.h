@@ -6,6 +6,6 @@
 # include "freertos/FreeRTOS.h"
 # include "freertos/task.h"
 
-#include <stdio.h> // TODO: delete when printf is replaced
+# include <stdio.h> // TODO: delete when printf is replaced
 
 #endif

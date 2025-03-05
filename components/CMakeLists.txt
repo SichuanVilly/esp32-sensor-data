@@ -10,4 +10,5 @@ idf_component_register(
         "lcd_i2c"
         "i2c_bus"
         ${CMAKE_SOURCE_DIR}/main #This is needed to include common.h
-    REQUIRES dht)
+    REQUIRES dht
+    REQUIRES esp_lcd)

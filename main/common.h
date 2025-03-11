@@ -9,4 +9,10 @@
 
 # include <stdio.h> // TODO: delete when printf is replaced
 
+typedef struct
+{
+    float temp;
+    float humid;
+} data_t;
+
 #endif

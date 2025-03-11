@@ -2,6 +2,8 @@
 
 #define LOG_TAG "I2C_BUS"
 
+i2c_master_bus_handle_t i2c_bus;
+
 esp_err_t i2c_bus_init(void)
 {
     esp_err_t status;

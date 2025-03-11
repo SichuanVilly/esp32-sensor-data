@@ -15,10 +15,10 @@
 # define LCD_CMD_BITS 8
 # define LCD_PARAM_BITS 8
 
-void display_on_screen(void);
-
-static esp_lcd_panel_io_handle_t io_handle;
+extern esp_lcd_panel_io_handle_t io_handle;
 
 esp_err_t lcd_init(void);
+void lcd_print(const char *str);
+void lcd_set_cursor(uint8_t row, uint8_t col);
 
 #endif // LCD_I2C_H

@@ -15,8 +15,8 @@
     {
       "type": "wokwi-lcd1602",
       "id": "lcd1",
-      "top": -406.4,
-      "left": 168.8,
+      "top": -425.6,
+      "left": 149.6,
       "attrs": { "pins": "i2c" }
     }
   ],
@@ -26,7 +26,7 @@
     [ "dht1:VCC", "esp:3V3", "red", [ "v28.8", "h9.45" ] ],
     [ "dht1:GND", "esp:GND.2", "black", [ "h76.8", "v48" ] ],
     [ "dht1:SDA", "esp:4", "green", [ "v9.6", "h105.7", "v153.6" ] ],
-    [ "lcd1:VCC", "esp:5V", "red", [ "v-28.7", "h-134.4", "v364.8", "h38.25" ] ],
+    [ "lcd1:VCC", "esp:5V", "red", [ "v-28.7", "h-105.6", "v364.8", "h47.85" ] ],
     [ "esp:0", "bb1:13b.h", "", [ "$bb" ] ],
     [ "esp:2", "bb1:13b.i", "", [ "$bb" ] ],
     [ "esp:4", "bb1:13b.g", "", [ "$bb" ] ],
@@ -50,8 +50,9 @@
     [ "esp:5V", "bb1:bp.2", "", [ "$bb" ] ],
     [ "esp:RX", "bb1:13t.a", "", [ "$bb" ] ],
     [ "esp:GND.3", "bb1:13t.c", "", [ "$bb" ] ],
-    [ "lcd1:GND", "bb1:tp.12", "black", [ "h-38.4", "v124.8", "h56" ] ],
-    [ "lcd1:SDA", "bb1:15t.b", "green", [ "h-19.2", "v96.2", "h57.6", "v115.2" ] ]
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "h0" ] ]
   ],
   "dependencies": {}
 }

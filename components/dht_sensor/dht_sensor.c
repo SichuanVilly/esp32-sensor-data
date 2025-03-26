@@ -5,8 +5,6 @@
 
 void dht_sensor_read(data_t *sensor_data)
 {
-    float temp = 0.f;
-    float humid = 0.f;
     ESP_LOGI(LOG_TAG, "reading_temperature...");
     if (dht_read_float_data(DHT_TYPE, DHT_PIN, &sensor_data->humid, &sensor_data->temp) != ESP_OK)
     {

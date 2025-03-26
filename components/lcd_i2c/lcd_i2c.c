@@ -7,8 +7,14 @@ lcd_t *s_lcd;
 
 void lcd_print_sensor_data(data_t * sensor_data)
 {
+    static float last_temp;
+    static float last_humid;
     char buffer[16];
 
+    if (last_temp == sensor_data->temp && last_humid == sensor_data->humid)
+        return;
+    last_temp = sensor_data->temp;
+    last_humid = sensor_data->humid;
     lcd_send_byte(0x01, 0);
     lcd_set_cursor(0, 0);
     lcd_send_string("temp: ");

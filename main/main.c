@@ -1,6 +1,7 @@
 #include "common.h"
 #include "dht_sensor.h"
 #include "lcd_i2c.h"
+#include "sd_card.h"
 
 # define LOG_TAG "ESP32_SENSOR_DATA"
 
@@ -34,7 +35,9 @@ void task_read_temperature_and_humidity_dht22(void * parameter)
 void app_main(void)
 {
     data_t sensor_data;
-
+    // sdcard_init();
+    // write_data();
+    // exit(1);
     ESP_LOGI(LOG_TAG, "setting up...");
     if (bus_init() == ESP_OK) 
     {

@@ -77,7 +77,7 @@ esp_err_t lcd_send_byte(uint8_t data, uint8_t mode)
     return ESP_OK;
 }
 
-esp_err_t bus_init(void)
+esp_err_t lcd_bus_init(void)
 {
     esp_err_t status;
     s_lcd = (lcd_t *)calloc(1, sizeof(lcd_t));

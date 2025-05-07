@@ -36,13 +36,13 @@ void app_main(void)
     data_t sensor_data;
 
     ESP_LOGI(LOG_TAG, "setting up...");
-    if (bus_init() == ESP_OK) 
-    {
-        lcd_init();
-    } else {
-        ESP_LOGE(LOG_TAG, "LCD initialization failed!");
-        return;
-    }
+    // if (lcd_bus_init() == ESP_OK) 
+    // {
+    //     lcd_init();
+    // } else {
+    //     ESP_LOGE(LOG_TAG, "LCD initialization failed!");
+    //     return;
+    // }
     ESP_LOGI(LOG_TAG, "AFTER INITIALIZATING BUS");
     sensor_data_mutex = xSemaphoreCreateMutex();
     if (sensor_data_mutex == NULL) {
@@ -52,5 +52,5 @@ void app_main(void)
     ESP_LOGI(LOG_TAG, "setup done...");
     
     xTaskCreatePinnedToCore(&task_read_temperature_and_humidity_dht22, "READ_HUMID_TEMP_TASK", 4096, &sensor_data, 1, NULL, 0);
-    xTaskCreatePinnedToCore(&task_display_data_in_lcd, "LCD_DISPLAY_TASK", 4096, &sensor_data, 1, NULL, 0);
+    //xTaskCreatePinnedToCore(&task_display_data_in_lcd, "LCD_DISPLAY_TASK", 4096, &sensor_data, 1, NULL, 0);
 }

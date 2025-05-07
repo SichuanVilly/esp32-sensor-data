@@ -18,7 +18,7 @@ typedef struct
 } lcd_t;
 
 void lcd_init(void);
-esp_err_t bus_init(void);
+esp_err_t lcd_bus_init(void);
 esp_err_t lcd_send_byte(uint8_t data, uint8_t mode);
 void lcd_send_string(char *str);
 void lcd_set_cursor(uint8_t col, uint8_t row);

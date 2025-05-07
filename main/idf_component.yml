@@ -14,4 +14,4 @@ dependencies:
   #   # `public` flag doesn't have an effect dependencies of the `main` component.
   #   # All dependencies of `main` are public by default.
   #   public: true
-  zorxx/dht: ^1.0.1
+  zorxx/dht: '*'

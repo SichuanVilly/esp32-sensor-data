@@ -38,12 +38,11 @@ void lcd_set_cursor(uint8_t row, uint8_t col) {
     uint8_t cmd;
 
     if (row == 0) {
-        cmd = 0x80 + col; // First row (0x80 is the base address)
+        cmd = 0x80 + col;
     } else if (row == 1) {
-        cmd = 0xC0 + col; // Second row (0xC0 is the base address)
+        cmd = 0xC0 + col;
     } else {
-        // For other rows, you can add more logic if your display supports them
-        return;  // Invalid row for this display (only two rows supported in this example)
+        return;
     }
 
     lcd_send_byte(cmd, 0);

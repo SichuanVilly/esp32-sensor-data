@@ -1,5 +1,7 @@
 # Esp32 Data read and write
 
+This project is working on real hardware and also working on Wokwi
+
 ## Useful commands
 idf.py build
 

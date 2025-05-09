@@ -5,8 +5,8 @@
 # include "common.h"
 
 # define LCD_ADDR 0X27
-# define SCL_SPEED_HZ 100000
-# define LCD_MAX_CHAR_WRITE_COUNT 32
+# define SCL_SPEED_HZ 50000
+# define LCD_MAX_CHAR_WRITE_COUNT 16
 
 # define I2C_SDA_PIN 21
 # define I2C_SCL_PIN 22

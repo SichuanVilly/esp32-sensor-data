@@ -18,17 +18,23 @@ void lcd_print_sensor_data(data_t * sensor_data)
     lcd_send_byte(0x01, 0);
     lcd_set_cursor(0, 0);
     lcd_send_string("temp: ");
+    vTaskDelay(1 / portTICK_PERIOD_MS);
     snprintf(buffer, sizeof(buffer), "%.2f", sensor_data->temp);
     lcd_send_string(buffer);
+    vTaskDelay(1 / portTICK_PERIOD_MS);
     lcd_send_string(" C");
-    lcd_set_cursor(0, 1);
+    lcd_set_cursor(1, 0);
     lcd_send_string("humid: ");
+    vTaskDelay(1 / portTICK_PERIOD_MS);
+
     snprintf(buffer, sizeof(buffer), "%.2f", sensor_data->humid);
     lcd_send_string(buffer);
+    vTaskDelay(1 / portTICK_PERIOD_MS);
+
     lcd_send_string(" %");
 }
 
-void lcd_set_cursor(uint8_t col, uint8_t row) {
+void lcd_set_cursor(uint8_t row, uint8_t col) {
     uint8_t cmd;
 
     if (row == 0) {
@@ -120,17 +126,18 @@ esp_err_t lcd_bus_init(void)
 
 void lcd_init() {
     vTaskDelay(50 / portTICK_PERIOD_MS);
-    lcd_send_byte(0x03, 0);  // Send 0x03 to LCD to initiate the interface in 8-bit modee (first pulse)
+    lcd_send_byte(0x03, 0);
     vTaskDelay(5 / portTICK_PERIOD_MS);
-    lcd_send_byte(0x03, 0);  // Send 0x03 again to continue the initialization (second pulse)
+    lcd_send_byte(0x03, 0);
+    vTaskDelay(5 / portTICK_PERIOD_MS);
+    lcd_send_byte(0x03, 0);
     vTaskDelay(1 / portTICK_PERIOD_MS);
-    lcd_send_byte(0x03, 0);  // Send 0x03 for the third pulse to further initialize and confirm 8-bit mode
-    lcd_send_byte(0x02, 0);  // Change to 4-bit mode
-
-    lcd_send_byte(0x28, 0);  // Function Set: 4-bit, 2 lines, 5x8 dots
-    lcd_send_byte(0x0C, 0);  // Display ON, Cursor OFF
-    lcd_send_byte(0x06, 0);  // Entry Mode Set: Move cursor right
-    lcd_send_byte(0x01, 0);  // Clear display
-    vTaskDelay(2 / portTICK_PERIOD_MS);
+    lcd_send_byte(0x02, 0);
+    vTaskDelay(1 / portTICK_PERIOD_MS);
+    lcd_send_byte(0x28, 0);  
+    lcd_send_byte(0x0C, 0);  
+    lcd_send_byte(0x06, 0);  
+    lcd_send_byte(0x01, 0);  
+    vTaskDelay(2 / portTICK_PERIOD_MS); 
 }
 
